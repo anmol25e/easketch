@@ -13,44 +13,52 @@ function changeColorFromPicker() {
 
 
 
-let gridSize = prompt("num?")
+let gridSize = prompt("any num smaller than 100")
 function createBoard() {
     let num = parseInt(gridSize)
-    container.innerHTML = "";
-    const containerSize = 400;
-    const colCal =num
-    const rowCal = num
-    const itemSize = containerSize/ colCal
+    if (num > 100) {
+        return alert("insert smaller number");
 
-    for(let a=0; a<num * num; a++) {
-        const gridItem = document.createElement("div");
-        gridItem.classList.add('gridItem')
-        gridItem.style.width = itemSize + 'px';
-        gridItem.style.height = itemSize + 'px';
-        gridItem.style.boxSizing = 'border-box';
+    } else {
 
-        showUnbtn.addEventListener('click', function () {
-            gridItem.style.border = '1px solid #ccc';
-            
-        })
-
-        unshowbtn.addEventListener('click', function () {
-            gridItem.style.border = 'none';
-        })
+        container.innerHTML = "";
+        const containerSize = 400;
+        const colCal =num
+        const rowCal = num
+        const itemSize = containerSize/ colCal
 
 
-        gridItem.addEventListener('mouseover', () => {
-            gridItem.style.backgroundColor = 'black';
-        });
+        for(let a=0; a<num * num; a++) {
+            const gridItem = document.createElement("div");
+            gridItem.classList.add('gridItem')
+            gridItem.style.width = itemSize + 'px';
+            gridItem.style.height = itemSize + 'px';
+            gridItem.style.boxSizing = 'border-box';
+    
+            showUnbtn.addEventListener('click', function () {
+                gridItem.style.border = '1px solid #ccc';
+                
+            })
+    
+            unshowbtn.addEventListener('click', function () {
+                gridItem.style.border = 'none';
+            })
+    
+    
+            gridItem.addEventListener('mouseover', () => {
+                gridItem.style.backgroundColor = 'black';
+            });
+    
+    
+            container.appendChild(gridItem);
+    
+            console.log(`Rows: ${rowCal}, Columns: ${colCal}`);
+    
+        }
 
-
-        container.appendChild(gridItem);
-
-        console.log(`Rows: ${rowCal}, Columns: ${colCal}`);
-
+        
     }
 
-    
 }
 createBoard()
 
