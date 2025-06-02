@@ -27,7 +27,8 @@
   }
 
   #colorPicker{
-    display: none;
-    margin-left: 700px;
+    margin-left: 555px;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
   }

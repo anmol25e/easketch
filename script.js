@@ -61,9 +61,3 @@ function createBoard() {
 
 }
 createBoard()
-
-
-bgColour.addEventListener('click', function () {
-    document.getElementById("colorPicker").style.display = "block"
-    document.getElementById("colorPicker").style.justifyContent = "center"
-})
